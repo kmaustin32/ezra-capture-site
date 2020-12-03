@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
+//Style
+import styled from 'styled-components';
+//State
 import {MovieState} from '../movieState';
+//Animate
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../animation';
 
 
 const MoiveDetail = () => {
@@ -18,7 +23,11 @@ const MoiveDetail = () => {
     return(
         <>
         {movie && (
-            <StyledDetails>
+            <StyledDetails
+            variants={pageAnimation}
+            initial="hidden"
+            animate="show"
+            exit="exit">
                 <StyledHeadline>
                 <h2>{movie.title}</h2>
                 <img src={movie.mainImg} alt="movie"/>
@@ -42,7 +51,7 @@ const MoiveDetail = () => {
     ); 
 };
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
     color: whitesmoke;
 `;
 
