@@ -5,25 +5,9 @@ import home1 from '../images/home1.png'
 import {StyledAbout, StyledDescription, StyledImage, StyledHide} from "../styles"
 //Animate
 import {motion} from 'framer-motion';
+import {TitleAnimation, Container} from '../animation';
 
 const AboutSection = () => {
-
-    const TitleAnimation = {
-        hidden: {opacity: 0},
-        show: {opacity: 1, transition: {duration: 1}}
-    };
-
-    const Container = {
-        hidden: {x: 100},
-        show: {
-            x: 0, 
-            transition: {
-                duration: 1, 
-                staggerChildren: 1,
-                when: 'afterChildren'
-            }
-        }
-    };
 
     return(
         <StyledAbout>
