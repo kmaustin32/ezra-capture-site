@@ -7,7 +7,7 @@ export const pageAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1,
+            duration: .75,
             
         }
     },
@@ -15,24 +15,35 @@ export const pageAnimation = {
         opacity: 0,
         y: 300,
         transition: {
-            duration: 1
+            duration: .75
         }
     }
 };
 
 export const TitleAnimation = {
-    hidden: {opacity: 0},
-    show: {opacity: 1, transition: {duration: 1}}
+    hidden: {
+        opacity: 0,
+        y: 200
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: .75,
+            ease: 'easeOut'
+        }
+    }
 };
 
 export const Container = {
-    hidden: {x: 100},
+    hidden: {y: 100},
     show: {
-        x: 0, 
+        y: 0, 
         transition: {
             duration: 1, 
-            staggerChildren: 1,
-            when: 'afterChildren'
+            staggerChildren: .75,
+            when: 'beforeChildren',
+            ease: 'easeOut'
         }
     }
 };

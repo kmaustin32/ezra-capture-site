@@ -6,6 +6,8 @@ import {StyledAbout, StyledDescription, StyledImage, StyledHide} from "../styles
 //Animate
 import {motion} from 'framer-motion';
 import {TitleAnimation, Container} from '../animation';
+//Link
+import {Link} from 'react-router-dom';
 
 const AboutSection = () => {
 
@@ -37,7 +39,9 @@ const AboutSection = () => {
                     </StyledHide>
                 </motion.div>
                 <p>Contact me for any of your needs, as I have the desire to help</p>
-                <button>Contact Us</button>
+                <Link to='/contact'>
+                    <button>Contact Us</button>
+                </Link>
             </StyledDescription>
             <StyledImage>
                 <img src={home1} alt="guy with camera"/>
