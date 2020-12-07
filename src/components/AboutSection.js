@@ -3,11 +3,15 @@ import React from 'react';
 import home1 from '../images/home1.png'
 //Styles
 import {StyledAbout, StyledDescription, StyledImage, StyledHide} from "../styles"
+import styled from 'styled-components';
 //Animate
 import {motion} from 'framer-motion';
 import {TitleAnimation, TitleContainer} from '../animation';
 //Link
 import {Link} from 'react-router-dom';
+//Wave
+import Wave from './Wave';
+
 
 const AboutSection = () => {
 
@@ -46,6 +50,7 @@ const AboutSection = () => {
             <StyledImage>
                 <img src={home1} alt="guy with camera"/>
             </StyledImage>
+            <Wave />
         </StyledAbout>
     );
 };

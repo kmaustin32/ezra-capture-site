@@ -7,7 +7,7 @@ export const pageAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: .75,
+            duration: 1,
             
         }
     },
@@ -15,7 +15,20 @@ export const pageAnimation = {
         opacity: 0,
         y: 300,
         transition: {
-            duration: .75
+            duration: .5
+        }
+    }
+};
+
+export const TitleContainer = {
+    hidden: {y: 100},
+    show: {
+        y: 0, 
+        transition: {
+            duration: 1, 
+            staggerChildren: .75,
+            when: 'beforeChildren',
+            ease: 'easeOut'
         }
     }
 };
@@ -35,15 +48,16 @@ export const TitleAnimation = {
     }
 };
 
-export const TitleContainer = {
-    hidden: {y: 100},
-    show: {
-        y: 0, 
+export const SVGAnimation = {
+    initial: {
+        pathLength: 0,
+        pathOffset: 1
+    },
+    animate: {
+        pathLength: 1,
+        pathOffset: 0,
         transition: {
-            duration: 1, 
-            staggerChildren: .75,
-            when: 'beforeChildren',
-            ease: 'easeOut'
+            duration: 2
         }
     }
-};
+}
