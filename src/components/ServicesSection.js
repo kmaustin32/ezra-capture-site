@@ -28,6 +28,8 @@ const ServicesSection = () => {
                         </div>
                         <p>Lorem ipsum dolor sit amet.</p>
                     </StyledCard>
+                </StyledCards>
+                <StyledCards>
                     <StyledCard>
                         <div className="icon">
                             <img src={diaphragm} alt="diaphragm"/>
@@ -63,7 +65,7 @@ const StyledServices = styled(StyledAbout)`
 
 const StyledCards = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
 `;
 
 const StyledCard = styled.div`

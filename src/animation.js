@@ -35,7 +35,7 @@ export const TitleAnimation = {
     }
 };
 
-export const Container = {
+export const TitleContainer = {
     hidden: {y: 100},
     show: {
         y: 0, 

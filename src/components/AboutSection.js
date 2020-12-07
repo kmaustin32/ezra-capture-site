@@ -5,7 +5,7 @@ import home1 from '../images/home1.png'
 import {StyledAbout, StyledDescription, StyledImage, StyledHide} from "../styles"
 //Animate
 import {motion} from 'framer-motion';
-import {TitleAnimation, Container} from '../animation';
+import {TitleAnimation, TitleContainer} from '../animation';
 //Link
 import {Link} from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const AboutSection = () => {
         <StyledAbout>
             <StyledDescription>
                 <motion.div 
-                variants={Container} 
+                variants={TitleContainer} 
                 initial="hidden"
                 animate="show"
                 className="title">
