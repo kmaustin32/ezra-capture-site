@@ -6,7 +6,7 @@ import {StyledAbout, StyledDescription, StyledImage, StyledHide} from "../styles
 import styled from 'styled-components';
 //Animate
 import {motion} from 'framer-motion';
-import {TitleAnimation, TitleContainer} from '../animation';
+import {TitleAnimation, TitleContainer, fade, imgAnimate} from '../animation';
 //Link
 import {Link} from 'react-router-dom';
 //Wave
@@ -41,14 +41,21 @@ const AboutSection = () => {
                             true.
                         </motion.h2>
                     </StyledHide>
+                    <motion.p variants={fade}>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum deleniti possimus perspiciatis nam facere placeat aperiam excepturi maxime dignissimos, exercitationem error mollitia cumque dolorum inventore quo minus. Aperiam, totam.
+                    </motion.p>
+                    <Link to='/contact'>
+                        <motion.button variants={fade}>
+                            Contact Us
+                        </motion.button>
+                    </Link>
                 </motion.div>
-                <p>Contact me for any of your needs, as I have the desire to help</p>
-                <Link to='/contact'>
-                    <button>Contact Us</button>
-                </Link>
             </StyledDescription>
             <StyledImage>
-                <img src={home1} alt="guy with camera"/>
+                <motion.img 
+                variants={imgAnimate}
+                src={home1} 
+                alt="guy with camera"/>
             </StyledImage>
             <Wave />
         </StyledAbout>

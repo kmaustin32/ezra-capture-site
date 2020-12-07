@@ -6,11 +6,10 @@ import theracer from '../images/theracer-small.png';
 import goodtimes from '../images/goodtimes-small.png';
 //Style
 import styled from 'styled-components';
+import {StyledHide} from '../styles';
 //Animate
 import {motion} from 'framer-motion';
-import {pageAnimation} from '../animation';
-
-
+import {pageAnimation, fade, imgAnimate, lineAnimate} from '../animation';
 
 const OurWork = () => {
     return(
@@ -20,24 +19,30 @@ const OurWork = () => {
         animate="show"
         exit="exit">
             <StyledMovie>
-                <h2>The Athlete</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>The Athlete</motion.h2>
+                <motion.div variants={lineAnimate} className="line"></motion.div>
                 <Link to='/work/the-athlete'>
-                    <img src={athlete} alt="athlete"/>
+                    <StyledHide>
+                        <motion.img variants={imgAnimate} src={athlete} alt="athlete"/>
+                    </StyledHide>
                 </Link>
             </StyledMovie>
             <StyledMovie>
-                <h2>The Racer</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>The Racer</motion.h2>
+                <motion.div variants={lineAnimate} className="line"></motion.div>
                 <Link to='/work/the-racer'>
-                    <img src={theracer} alt="theracer"/>
+                    <StyledHide>
+                        <motion.img variants={imgAnimate} src={theracer} alt="theracer"/>
+                    </StyledHide>  
                 </Link>
             </StyledMovie>
             <StyledMovie>
-                <h2>Good Times</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>Good Times</motion.h2>
+                <motion.div variants={lineAnimate} className="line"></motion.div>
                 <Link to='/work/good-times'>
-                    <img src={goodtimes} alt="goodtimes"/>
+                    <StyledHide>
+                        <motion.img variants={imgAnimate} src={goodtimes} alt="goodtimes"/>
+                    </StyledHide> 
                 </Link>
             </StyledMovie>
         </StyledWork>
@@ -57,7 +62,7 @@ const StyledMovie = styled.div`
     padding-bottom: 10rem;
     .line {
         height: 0.3rem;
-        background: whitesmoke;
+        background: #3de9f5;
         margin-bottom: 3rem;
     }
     img {
@@ -66,5 +71,7 @@ const StyledMovie = styled.div`
         object-fit: cover;
     }
 `;
+
+
 
 export default OurWork;
