@@ -61,7 +61,7 @@ export const MovieState = () => {
       secondaryImg: theracer2,
       awards: [
         {
-          title: "Too Fast, and Too Furious",
+          title: "Too Fast and Too Furious",
           description:
             "“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”",
         },

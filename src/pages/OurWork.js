@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import {StyledHide} from '../styles';
 //Animate
 import {motion} from 'framer-motion';
-import {pageAnimation, fade, imgAnimate, lineAnimate} from '../animation';
+import {pageAnimation, fade, imgAnimate, lineAnimate, slider, sliderContainer} from '../animation';
 
 const OurWork = () => {
     return(
@@ -18,6 +18,12 @@ const OurWork = () => {
         initial="hidden"
         animate="show"
         exit="exit">
+            <motion.div variants={sliderContainer}>
+                <Frame1 variants={slider}></Frame1>
+                <Frame2 variants={slider}></Frame2>
+                <Frame3 variants={slider}></Frame3>
+                <Frame4 variants={slider}></Frame4>
+            </motion.div>
             <StyledMovie>
                 <motion.h2 variants={fade}>The Athlete</motion.h2>
                 <motion.div variants={lineAnimate} className="line"></motion.div>
@@ -67,11 +73,33 @@ const StyledMovie = styled.div`
     }
     img {
         width: 100%;
-        height: 70vh;
+        height: 75vh;
         object-fit: cover;
     }
 `;
 
+//Frame Animation
+const Frame1 = styled(motion.div)`
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: #4287f5;
+    z-index: 2;
+    opacity: .5;
+`;
 
+const Frame2 = styled(Frame1)`
+    background: #6533bd;
+`;
+
+const Frame3 = styled(Frame1)`
+    background: #872682;
+`;
+
+const Frame4 = styled(Frame1)`
+    background: #454545;;
+`;
 
 export default OurWork;
