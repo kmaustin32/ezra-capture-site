@@ -12,10 +12,10 @@ const FaqSection = () => {
 
     return(
         <StyledFaq 
-            ref={element} 
-            variants={scrollReveal} 
-            initial="hidden" 
-            animate={controls}>
+        ref={element} 
+        variants={scrollReveal} 
+        initial="hidden" 
+        animate={controls}>
             <h2>Any Questions? <span>FAQ</span></h2>
             <AnimateSharedLayout>
             <Toggle title="Sample Question Number 1">
