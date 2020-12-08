@@ -1,51 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import {StyledAbout} from '../styles';
+import Toggle from './Toggle';
+import {AnimateSharedLayout} from 'framer-motion';
 
 const FaqSection = () => {
+
     return(
         <StyledFaq>
             <h2>Any Questions? <span>FAQ</span></h2>
-            <div className="question">
-                <h4>Sample Question Number 1</h4>
+            <AnimateSharedLayout>
+            <Toggle title="Sample Question Number 1">
+
                 <div className="answer">
                     <p>Lorem ipsum dolor sit amet.
                     </p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, rem blanditiis quaerat autem quas ipsam nemo fuga odit explicabo non!
                     </p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Sample Question Number 2</h4>
+
+            </Toggle>
+            <Toggle title="Sample Question Number 2">
+
                 <div className="answer">
                     <p>Lorem ipsum dolor sit amet.
                     </p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolore rem autem facilis dolores voluptatum deserunt. Excepturi omnis placeat eum!
-                    </p>
+                        </p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Sample Question Number 3</h4>
+
+            </Toggle>
+            <Toggle title="Sample Question Number 3">
+
                 <div className="answer">
                     <p>Lorem ipsum dolor sit amet.
                     </p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis dolor adipisci rerum accusamus quas obcaecati totam aperiam repellat placeat a.
                     </p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Sample Question Number 4</h4>
+
+            </Toggle>
+            <Toggle title="Sample Question Number 4">
+
                 <div className="answer">
                     <p>Lorem ipsum dolor sit amet.
                     </p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam expedita ullam veritatis qui natus fugiat maxime cumque dolor, quibusdam excepturi.
                     </p>
                 </div>
-                <div className="faq-line"></div>
-            </div>
+
+            </Toggle>
+            </AnimateSharedLayout>
         </StyledFaq>
     )
 }
