@@ -6,11 +6,20 @@ import teamwork from '../images/teamwork.svg';
 import home2 from '../images/home2.png'
 import {StyledAbout, StyledDescription, StyledImage} from "../styles";
 import styled from "styled-components";
+import {scrollReveal} from '../animation';
+import {useScroll} from './useScroll';
 
 
 const ServicesSection = () => {
+    
+    const [element, controls] = useScroll();
+
     return(
-        <StyledServices>
+        <StyledServices 
+            ref={element} 
+            variants={scrollReveal} 
+            initial="hidden" 
+            animate={controls}>
             <StyledDescription>
                 <h2>High <span>quality</span> services</h2>
                 <StyledCards>
