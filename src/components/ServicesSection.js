@@ -68,7 +68,7 @@ const StyledServices = styled(StyledAbout)`
         z-index: 3;
     }
     p {
-        width: 70%auto;
+        width: 70%;
         padding: 2rem 0rem 4rem 0rem;
     }
     @media (max-width: 900px) {
@@ -79,7 +79,8 @@ const StyledServices = styled(StyledAbout)`
 
 const StyledCards = styled.div`
     display: flex;
-    //flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
 
 const StyledCard = styled.div`
