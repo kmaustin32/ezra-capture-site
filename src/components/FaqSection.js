@@ -65,7 +65,7 @@ const FaqSection = () => {
 
 const StyledFaq = styled(StyledAbout)`
     display: block;
-    padding: 5rem 10rem 5rem 15rem;
+    padding: 4rem 8rem 4rem 12.5rem;
     span {
         display: block;
     }
@@ -88,6 +88,10 @@ const StyledFaq = styled(StyledAbout)`
         p {
             padding: 1rem 0rem;
         }
+    }
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
     }
 `;
 

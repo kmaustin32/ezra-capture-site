@@ -7,7 +7,12 @@ export const StyledAbout = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 10rem;
+    padding: 4rem 8rem;
+    
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
+    }
 `;
 
 export const StyledDescription = styled.div`

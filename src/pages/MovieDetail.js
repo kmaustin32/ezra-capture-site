@@ -7,7 +7,7 @@ import {MovieState} from '../movieState';
 //Animate
 import {motion} from 'framer-motion';
 import {pageAnimation} from '../animation';
-
+import ScrollTop from '../components/ScrollTop';
 
 const MoiveDetail = () => {
     const history = useHistory();
@@ -45,6 +45,7 @@ const MoiveDetail = () => {
                     src={movie.secondaryImg} 
                     alt="secondaryImage"/>
                 </StyledImage>
+                <ScrollTop />
             </StyledDetails>
         )}
         </>
@@ -53,6 +54,10 @@ const MoiveDetail = () => {
 
 const StyledDetails = styled(motion.div)`
     color: whitesmoke;
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
+    }
 `;
 
 const StyledHeadline = styled.div`
@@ -79,7 +84,9 @@ const StyledAwards = styled.div`
     align-items: center;
     justify-content: space-around;
     margin: 5rem;
-    
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
 `;
 
 const StyledAward = styled.div`

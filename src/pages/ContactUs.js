@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import {pageAnimation, TitleAnimation, lineAnimate} from '../animation';
 import styled from 'styled-components';
 import {StyledHide, styledHide} from '../styles';
+import ScrollTop from '../components/ScrollTop';
 
 
 const ContactUs = () => {
@@ -41,7 +42,7 @@ const ContactUs = () => {
                     <h3>Find Us On Social Media</h3>
                 </StyledSocial>
             </StyledHide>
-            
+            <ScrollTop />
         </motion.div>
     );
 };
@@ -50,6 +51,10 @@ const StyledContact = styled(motion.div)`
     padding: 5rem 10rem;
     color: whitesmoke;
     min-height: 90vh;
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
+    }
 `;
 
 const StyledTitle = styled.div`

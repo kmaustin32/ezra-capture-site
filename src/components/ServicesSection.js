@@ -65,10 +65,15 @@ const ServicesSection = () => {
 const StyledServices = styled(StyledAbout)`
     h2 {
         padding-bottom: 3rem;
+        z-index: 3;
     }
     p {
         width: 70%auto;
         padding: 2rem 0rem 4rem 0rem;
+    }
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
     }
 `;
 

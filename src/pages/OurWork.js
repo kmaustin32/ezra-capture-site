@@ -11,6 +11,7 @@ import {StyledHide} from '../styles';
 import {motion} from 'framer-motion';
 import {pageAnimation, fade, imgAnimate, lineAnimate, slider, sliderContainer, scrollReveal} from '../animation';
 import {useScroll} from '../components/useScroll';
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
 
@@ -63,7 +64,8 @@ const OurWork = () => {
                         <motion.img variants={imgAnimate} src={goodtimes} alt="goodtimes"/>
                     </StyledHide> 
                 </Link>
-            </StyledMovie>
+            </StyledMovie>\
+            <ScrollTop />
         </StyledWork>
     );
 };
@@ -74,6 +76,10 @@ const StyledWork = styled(motion.div)`
     padding: 5rem 10rem;
     h2 {
         padding: 1rem 0rem;
+    }
+    @media (max-width: 900px) {
+        display: block;
+        padding: 2rem 5rem;
     }
 `;
 
@@ -95,7 +101,7 @@ const StyledMovie = styled(motion.div)`
 const Frame1 = styled(motion.div)`
     position: fixed;
     left: 0;
-    top: 10%;
+    top: 8%;
     width: 100%;
     height: 100vh;
     background: #4287f5;

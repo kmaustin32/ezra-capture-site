@@ -9,9 +9,18 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Inter', sans-serif;
     }
 
+    html {
+        @media (max-width: 1500px) {
+            font-size: 75%
+        }
+        @media (max-width: 900px) {
+            font-size: 75%
+        }
+    }
+
     body {
         background: #1b1b1b;
-
+        overflow-x: hidden;
     }
 
     button {
