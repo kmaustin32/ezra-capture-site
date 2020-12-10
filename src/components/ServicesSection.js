@@ -67,34 +67,25 @@ const StyledServices = styled(StyledAbout)`
         padding-bottom: 3rem;
         z-index: 3;
     }
-    p {
-        width: 70%;
-        padding: 2rem 0rem 4rem 0rem;
-    }
-    @media (max-width: 900px) {
-        display: inline-flex;
-        padding: 2rem 5rem;
-        h2 {
-            //text-align: center;
-        }
-    }
-    @media (max-width: 768px) {
-        display: inline-block;
-    }
 `;
 
 const StyledDescription2 = styled(StyledDescription)`
     padding: 2rem;
+    @media (max-width: 900px) {
+        h2 {
+            text-align: center;
+        }
+    }
 `;
 
 const StyledCards = styled.div`
     display: flex;
     padding: 2rem;
-    justify-content: center;
+    justify-content: space-between;
 `;
 
 const StyledCard = styled.div`
-    flex-basis: 20rem;
+    flex-basis: 15rem;
     
     .icon {
         display: flex;
