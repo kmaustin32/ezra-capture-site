@@ -75,6 +75,20 @@ export const fade = {
     }
 };
 
+export const awardFade = {
+    hidden: { 
+    opacity: 0,
+    scale: 1.5
+    },
+    show: {
+        scale: 1,
+        opacity: 1,
+        transition: {  
+            duration: 1,
+        },
+    }
+};
+
 export const imgAnimate = {
     hidden: {
         scale: 1.5,

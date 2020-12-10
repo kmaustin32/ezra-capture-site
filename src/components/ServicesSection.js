@@ -20,7 +20,7 @@ const ServicesSection = () => {
             variants={scrollReveal} 
             initial="hidden" 
             animate={controls}>
-            <StyledDescription>
+            <StyledDescription2>
                 <h2>High <span>quality</span> services</h2>
                 <StyledCards>
                     <StyledCard>
@@ -54,7 +54,7 @@ const ServicesSection = () => {
                         <p>Lorem ipsum dolor sit amet.</p>
                     </StyledCard>
                 </StyledCards>
-            </StyledDescription>
+            </StyledDescription2>
             <StyledImage>
                 <img src={home2} alt="app-home-2"/>
             </StyledImage>
@@ -72,14 +72,24 @@ const StyledServices = styled(StyledAbout)`
         padding: 2rem 0rem 4rem 0rem;
     }
     @media (max-width: 900px) {
-        display: block;
+        display: inline-flex;
         padding: 2rem 5rem;
+        h2 {
+            //text-align: center;
+        }
     }
+    @media (max-width: 768px) {
+        display: inline-block;
+    }
+`;
+
+const StyledDescription2 = styled(StyledDescription)`
+    padding: 2rem;
 `;
 
 const StyledCards = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    padding: 2rem;
     justify-content: center;
 `;
 

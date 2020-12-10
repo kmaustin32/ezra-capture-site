@@ -2,18 +2,21 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 //Style
 import styled from 'styled-components';
+import {StyledHide} from '../styles'
 //State
 import {MovieState} from '../movieState';
 //Animate
 import {motion} from 'framer-motion';
-import {pageAnimation} from '../animation';
+import {pageAnimation, awardFade, fade} from '../animation';
 import ScrollTop from '../components/ScrollTop';
+import {useScroll} from '../components/useScroll';
 
 const MoiveDetail = () => {
     const history = useHistory();
     const url = history.location.pathname;
     const [movies, setMovies] = useState(MovieState);
     const [movie, setMovie] = useState(null);
+    const [element, controls] = useScroll();
     
     useEffect(() => {
         const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
@@ -32,14 +35,20 @@ const MoiveDetail = () => {
                 <h2>{movie.title}</h2>
                 <img src={movie.mainImg} alt="movie"/>
                 </StyledHeadline>
-                <StyledAwards>
+                <StyledHide>
+                <StyledAwards 
+                ref={element}
+                variants={awardFade}
+                initial='hidden'
+                animate={controls}>
                     {movie.awards.map((award) => (
-                        <Award 
+                        <Award
                         title={award.title}
                         description={award.description}
                         key={award.title}/>
                     ))}
                 </StyledAwards>
+                </StyledHide>
                 <StyledImage>
                     <img 
                     src={movie.secondaryImg} 
@@ -56,12 +65,12 @@ const StyledDetails = styled(motion.div)`
     color: whitesmoke;
     @media (max-width: 900px) {
         display: block;
-        padding: 2rem 5rem;
+        padding: 2rem 5rem 0rem 5rem;
     }
 `;
 
 const StyledHeadline = styled.div`
-    min-height: 90vh;
+    min-height: 80vh;
     padding-top: 20vh;
     position: relative;
     h2 {
@@ -76,27 +85,41 @@ const StyledHeadline = styled.div`
         height: 100vh;
         object-fit: cover; 
     }
+    @media (max-width: 900px) {
+        min-height: 60vh;
+        img {
+            height: 50vh;
+        }
+    }
     @media (max-width: 768px) {
+        min-height: 50vh;
+        padding-top: 10vh;
         h2 {
             top: 5%;
             font-size: 2.75rem;
-            padding-bottom: 15%;
+        }
+        img {
+            height: 35vh;
         }
     }
 `;
 
-const StyledAwards = styled.div`
+const StyledAwards = styled(motion.div)`
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 5rem 1rem;
     @media (max-width: 900px) {
+        margin: 1rem 0rem;
+    }
+    @media (max-width: 768px) {
         flex-direction: column;
+        margin: 3rem 0rem;
     }
 `;
 
-const StyledAward = styled.div`
+const StyledAward = styled(motion.div)`
     padding: 3rem;
     h3 {
         font-size: 1.75rem;
@@ -107,6 +130,9 @@ const StyledAward = styled.div`
         background: rgb(189, 29, 252);
         margin: 1rem 0rem;
     }
+    @media (max-width: 900px) {
+        padding: 1.5rem;
+    }
 `;
 
 const StyledImage = styled.div`
@@ -115,6 +141,16 @@ const StyledImage = styled.div`
         width: 100%;
         height: 100vh;
         object-fit: cover;
+    }
+    @media (max-width: 900px) {
+        img {
+            height: 50vh;
+        }
+    }
+    @media (max-width: 768px) {
+        img {
+            height: 35vh;
+        }
     }
 `;
 

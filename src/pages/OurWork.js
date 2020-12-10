@@ -64,7 +64,7 @@ const OurWork = () => {
                         <motion.img variants={imgAnimate} src={goodtimes} alt="goodtimes"/>
                     </StyledHide> 
                 </Link>
-            </StyledMovie>\
+            </StyledMovie>
             <ScrollTop />
         </StyledWork>
     );
@@ -84,7 +84,7 @@ const StyledWork = styled(motion.div)`
 `;
 
 const StyledMovie = styled(motion.div)`
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
     .line {
         height: 0.3rem;
         background: #3de9f5;
@@ -94,6 +94,18 @@ const StyledMovie = styled(motion.div)`
         width: 100%;
         height: 75vh;
         object-fit: cover;
+    }
+    @media (max-width: 900px) {
+        padding-bottom: 5rem;
+        img {
+            height: 50vh;
+        }
+    }
+    @media (max-width: 768px) {
+        img {
+            height: 35vh;
+            padding-bottom: 3
+        }
     }
 `;
 
