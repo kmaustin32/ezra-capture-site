@@ -76,6 +76,13 @@ const StyledHeadline = styled.div`
         height: 100vh;
         object-fit: cover; 
     }
+    @media (max-width: 768px) {
+        h2 {
+            top: 5%;
+            font-size: 2.75rem;
+            padding-bottom: 15%;
+        }
+    }
 `;
 
 const StyledAwards = styled.div`
@@ -83,7 +90,7 @@ const StyledAwards = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 5rem;
+    margin: 5rem 1rem;
     @media (max-width: 900px) {
         flex-direction: column;
     }

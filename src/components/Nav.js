@@ -61,14 +61,15 @@ const StyledNav = styled.nav`
         font-size: 1.5rem;
         font-family: "Lobster", cursive;
         font-weight: lighter;
+        padding: 1rem 0rem 0rem 0rem;
     }
     li {
         padding-left: 8rem;
         position: relative;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
         flex-direction: column;
-        padding-bottom: 2rem;
+        padding: 0rem 0rem 2rem 0rem;
         
         li {
             padding-left: 3rem;
