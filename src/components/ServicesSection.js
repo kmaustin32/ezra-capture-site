@@ -70,11 +70,10 @@ const StyledServices = styled(StyledAbout)`
 `;
 
 const StyledDescription2 = styled(StyledDescription)`
-    padding: 2rem;
-    @media (max-width: 900px) {
-        h2 {
-            text-align: center;
-        }
+    text-align: center;
+    padding: 2rem 8rem 2rem 2rem;
+    @media (max-width: 768px) {
+        padding: 0rem;
     }
 `;
 
