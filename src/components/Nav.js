@@ -52,6 +52,7 @@ const StyledNav = styled.nav`
     z-index: 10;
     a {
         text-decoration: none;
+        color: white;
     }
     ul {
         display: flex;
